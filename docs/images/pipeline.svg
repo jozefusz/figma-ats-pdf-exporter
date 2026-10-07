@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 150" width="940" height="150" role="img" aria-labelledby="t d" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
+  <title id="t">How the exporter works</title>
+  <desc id="d">Five steps: read the Figma frame through the REST API, flatten it into text and shapes, embed real fonts and redraw the page as a PDF, then verify the text with two extractors.</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#57606a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+  <rect width="940" height="150" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+  <g font-size="14" fill="#1f2328" text-anchor="middle">
+    <rect x="20" y="30" width="148" height="90" rx="10" fill="#f6f8fa" stroke="#d0d7de"/>
+    <text x="94" y="58" font-weight="600">Figma frame</text><text x="94" y="80" fill="#57606a" font-size="12.5">your design,</text><text x="94" y="97" fill="#57606a" font-size="12.5">any layout</text>
+    <rect x="196" y="30" width="148" height="90" rx="10" fill="#f6f8fa" stroke="#d0d7de"/>
+    <text x="270" y="58" font-weight="600">Read layers</text><text x="270" y="80" fill="#57606a" font-size="12.5">REST API: text,</text><text x="270" y="97" fill="#57606a" font-size="12.5">shapes, positions</text>
+    <rect x="372" y="30" width="148" height="90" rx="10" fill="#f6f8fa" stroke="#d0d7de"/>
+    <text x="446" y="58" font-weight="600">Flatten</text><text x="446" y="80" fill="#57606a" font-size="12.5">warn on anything</text><text x="446" y="97" fill="#57606a" font-size="12.5">unsupported</text>
+    <rect x="548" y="30" width="148" height="90" rx="10" fill="#ddf4ff" stroke="#54aeff"/>
+    <text x="622" y="58" font-weight="600">Redraw as PDF</text><text x="622" y="80" fill="#57606a" font-size="12.5">real fonts, real</text><text x="622" y="97" fill="#57606a" font-size="12.5">spaces and links</text>
+    <rect x="724" y="30" width="196" height="90" rx="10" fill="#dafbe1" stroke="#4ac26b"/>
+    <text x="822" y="58" font-weight="600">Verify</text><text x="822" y="80" fill="#57606a" font-size="12.5">pypdf + pdftotext must</text><text x="822" y="97" fill="#57606a" font-size="12.5">agree with your text</text>
+  </g>
+  <g stroke="#57606a" stroke-width="1.6" fill="none" marker-end="url(#a)">
+    <path d="M170 75 H192"/><path d="M346 75 H368"/><path d="M522 75 H544"/><path d="M698 75 H720"/>
+  </g>
+</svg>

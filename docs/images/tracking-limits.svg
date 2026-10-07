@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 330" width="860" height="330" role="img" aria-labelledby="t d" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
+  <title id="t">How much letter-spacing is safe</title>
+  <desc id="d">Letter-spacing as a percentage of font size, from 0 to 50 percent. Words in a Fragment Mono heading split from about 20 percent, words in a Bricolage Grotesque heading from about 40 percent, and the letters of any word from 40 percent. Exactly 10 percent splits letters at some sizes.</desc>
+  <rect width="860" height="330" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="24" y="36" font-size="17" font-weight="600" fill="#1f2328">How much letter-spacing is safe?</text>
+  <text x="24" y="57" font-size="12.5" fill="#57606a">Letter-spacing as % of font size. Measured with poppler's pdftotext; pypdf reads every case correctly.</text>
+  <!-- scale: 0..50% -> x 250..820 (11.4px per %) -->
+  <g stroke="#d0d7de" stroke-width="1"><path d="M250 92 V258"/><path d="M364 92 V258"/><path d="M478 92 V258"/><path d="M592 92 V258"/><path d="M706 92 V258"/><path d="M820 92 V258"/></g>
+  <g font-size="12" fill="#57606a" text-anchor="middle"><text x="250" y="278">0%</text><text x="364" y="278">10%</text><text x="478" y="278">20%</text><text x="592" y="278">30%</text><text x="706" y="278">40%</text><text x="820" y="278">50%</text></g>
+  <g font-size="13" fill="#1f2328" text-anchor="end">
+    <text x="236" y="119" font-weight="600">Words in a heading</text><text x="236" y="136" fill="#57606a" font-size="12">Fragment Mono</text>
+    <text x="236" y="177" font-weight="600">Words in a heading</text><text x="236" y="194" fill="#57606a" font-size="12">Bricolage Grotesque</text>
+    <text x="236" y="235" font-weight="600">Letters of any word</text><text x="236" y="252" fill="#57606a" font-size="12">any font</text>
+  </g>
+  <!-- Fragment Mono: ok to 15, caution 15-20, splits from 20 -->
+  <rect x="250" y="104" width="171" height="30" rx="4" fill="#2da44e"/><rect x="421" y="104" width="57" height="30" fill="#d4a72c"/><rect x="478" y="104" width="342" height="30" rx="4" fill="#cf222e"/>
+  <!-- Bricolage: ok to 30, caution 30-40, splits from 40 -->
+  <rect x="250" y="162" width="342" height="30" rx="4" fill="#2da44e"/><rect x="592" y="162" width="114" height="30" fill="#d4a72c"/><rect x="706" y="162" width="114" height="30" rx="4" fill="#cf222e"/>
+  <!-- letters: ok to 39, splits from 40 -->
+  <rect x="250" y="220" width="450" height="30" rx="4" fill="#2da44e"/><rect x="706" y="220" width="114" height="30" rx="4" fill="#cf222e"/>
+  <!-- 10% quirk marker -->
+  <path d="M364 214 L371 207 L364 200 L357 207 Z" fill="#8250df"/><path d="M364 214 V220" stroke="#8250df" stroke-width="2"/>
+  <text x="378" y="211" font-size="12" fill="#8250df" font-weight="600">exactly 10.0% splits letters at some sizes</text>
+  <g font-size="12" fill="#57606a"><rect x="24" y="298" width="12" height="12" rx="2" fill="#2da44e"/><text x="42" y="309">intact</text><rect x="100" y="298" width="12" height="12" rx="2" fill="#d4a72c"/><text x="118" y="309">warns before export</text><rect x="250" y="298" width="12" height="12" rx="2" fill="#cf222e"/><text x="268" y="309">split by pdftotext</text></g>
+</svg>

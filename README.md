@@ -16,7 +16,16 @@ character-spacing operator (`Tc`) for tracked text, so each run stays one
 text-showing operation with real word boundaries. It then re-extracts the
 text with two independent engines and diffs it against the Figma source.
 
+<p align="center">
+  <img src="docs/images/figma-sample-cv.png" width="340" alt="The sample CV as designed in Figma">
+  &nbsp;&nbsp;
+  <img src="docs/images/pdf-sample-cv.png" width="340" alt="The same CV exported to PDF by this tool">
+</p>
+<p align="center"><sub>Left: the frame in Figma. Right: the PDF this tool writes. It looks the same, but every word is real, extractable text.</sub></p>
+
 ## How it works
+
+![Pipeline: Figma frame, read layers, flatten, redraw as PDF, verify](docs/images/pipeline.svg)
 
 1. Pull the node tree for a frame via the REST API (`figma_client.py`).
 2. Flatten it into text runs, rectangles and simple vector icons (`extract.py`).
@@ -76,6 +85,8 @@ Exit codes: `0` clean, `1` the frame can't be exported (the error says why),
 `2` the PDF was written but an extractor read it back wrongly.
 
 ### Letter-spaced text
+
+![How much letter-spacing is safe](docs/images/tracking-limits.svg)
 
 Wide letter-spacing can make layout-based extractors (such as poppler's
 `pdftotext`) split words or letters. The tool warns before exporting, with the

@@ -25,6 +25,8 @@ too. Verification checks text, not looks.
 
 ### Letter-spacing (tracking)
 
+![How much letter-spacing is safe](images/tracking-limits.svg)
+
 | | |
 |---|---|
 | **Do** keep tracking below **40%** of the font size. For headings with several words, stay below about **17%** in a monospace font (Fragment Mono) or **35%** in a proportional one (Bricolage Grotesque); the warning gives the exact value per layer | Tracked text stays one run with real spaces |
@@ -81,6 +83,28 @@ Uppercase set with Figma's text-case option is fine; the tool applies it.
 | **Do** stack layers in the order you want them read | Tools that read the PDF in file order (such as `pypdf`) follow layer order, and the lowest layer in Figma's layers panel is read first |
 | **Do** build multi-column layouts one column at a time | Layout-based tools (`pdftotext`) ignore layer order and read by position, so layer order is what you control for file-order tools |
 | **Don't** worry about a title and a date sharing a baseline | The tool separates consecutive runs, so the last word of one layer never fuses into the first word of the next (tested with the date layer below the title layer) |
+
+## What you see in Figma and what you get
+
+Left is the frame in Figma, right is the exported PDF.
+
+**Clean (T8):** filled cards, rounded pills, dots and a divider all survive, and white text on the dark card stays readable.
+
+<table>
+<tr><td><img src="images/figma-backgrounds.png" alt="Figma: dark card, pill, dot and divider"></td><td><img src="images/pdf-backgrounds.png" alt="PDF: the same, drawn correctly"></td></tr>
+</table>
+
+**Partly lost (T5):** the outline-only box and the line layer are not drawn. The rounded pill and the round dot are kept. The tool warns about both dropped layers.
+
+<table>
+<tr><td><img src="images/figma-shapes.png" alt="Figma: outline box, line, pill, dot, divider"></td><td><img src="images/pdf-shapes.png" alt="PDF: outline box and line missing"></td></tr>
+</table>
+
+**Changed (T4):** the gradient text turns black, the rotated label is drawn upright in the wrong place, and the shadow is dropped. The tool warns about all three.
+
+<table>
+<tr><td><img src="images/figma-effects.png" alt="Figma: shadow, gradient and rotated text"></td><td><img src="images/pdf-effects.png" alt="PDF: black text, upright label, no shadow"></td></tr>
+</table>
 
 ## Before you export
 
