@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.env
+.DS_Store
+output/
+src/figma_ats_pdf/fonts_cache/*.ttf
+!src/figma_ats_pdf/fonts_cache/.gitkeep

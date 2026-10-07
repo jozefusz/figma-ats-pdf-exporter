@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "figma-ats-pdf-exporter"
+version = "0.1.0"
+description = "Export a Figma frame to a PDF with real, extractable text (ATS-friendly) instead of Figma's outlined-text export."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = [
+    "requests>=2.31",
+    "reportlab>=4.0",
+    "pypdf>=4.0",
+    "fonttools>=4.50",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+figma-ats-pdf = "figma_ats_pdf.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
